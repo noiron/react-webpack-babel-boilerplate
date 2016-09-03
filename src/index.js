@@ -1,1 +1,8 @@
-console.log('%c%s', 'font-size:20px;color:red', 'Yoyoyo');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.js';
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('app')
+);
