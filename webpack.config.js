@@ -1,8 +1,11 @@
 var path = require('path');
 var webpack = require('webpack');
+var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 module.exports = {
   entry: [
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
     './src/index'
   ],
   output: {
@@ -13,10 +16,14 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['babel'],
+      loaders: ['react-hot', 'babel'],
       include: path.join(__dirname, 'src')
     }]
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new ProgressBarPlugin(),
+  ],
   devServer: {
     stats: 'errors-only'
   }
