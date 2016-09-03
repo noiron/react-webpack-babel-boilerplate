@@ -1,0 +1,1 @@
+console.log('%c%s', 'font-size:20px;color:red', 'Yoyoyo');
